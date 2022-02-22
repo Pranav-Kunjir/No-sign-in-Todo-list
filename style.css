@@ -131,3 +131,13 @@ input {
 .addBtn:hover {
   background-color: #bbb;
 }
+.dash{
+  text-decoration: line-through;
+}
+.done{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  margin-top: 5vh;
+}
