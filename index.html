@@ -22,10 +22,10 @@
 </head>
 <body>
     <div id="myDIV" class="header">
-    <input type="text" id="input">
-    <button onclick="addtodo()" class="btn btn-primary">
-        Add Todo 
-    </button>
+        <div class="input-group mb-3 container w-50">
+            <input type="text" class="form-control" placeholder="what's on your mind" aria-label="Recipient's username" aria-describedby="button-addon2" id="input">
+            <button class="btn btn-outline-secondary btn-primary text-white" type="button" id="button-addon2" onclick="addtodo()">Add ToDo</button>
+        </div>
     </div>
     <div class="todos" id="todotext">
     </div>
