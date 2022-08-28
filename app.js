@@ -15,13 +15,18 @@ function addtodo (){
     // todolist.push(todo);
     // console.log(todolist)
     var add= document.getElementById("input");
-    addArray.push(add.value);
-    console.log(addArray)
-    var oldItems = JSON.parse(localStorage.getItem('finalarray')) || [];
-    oldItems.push(add.value);
-    localStorage.setItem("finalarray",JSON.stringify(oldItems));
-    add.value = "";
-    addhtml()
+    if ((add.value).length === 0 ){
+        alert("Type something in the input field");
+    } else{
+        addArray.push(add.value);
+        // console.log(addArray)
+        var oldItems = JSON.parse(localStorage.getItem('finalarray')) || [];
+        oldItems.push(add.value);
+        localStorage.setItem("finalarray",JSON.stringify(oldItems));
+        add.value = "";
+        addhtml()
+    }
+    
 }
 function addhtml (){
     var oldItems = JSON.parse(localStorage.getItem('finalarray')) || [];
@@ -31,7 +36,8 @@ function addhtml (){
     for ( var i = 0; i < oldItems.length; i++){
         var pelement = document.createElement("p");
         var text = document.createTextNode(oldItems[i]);
-        pelement.classList += "todotext";
+        // pelement.classList += "todotext";
+        pelement.classList.add("todotext")
         pelement.appendChild(text);
         parentdiv.appendChild(pelement);
     }
